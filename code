@@ -12,7 +12,7 @@ def gettime():
 def entry(a):
     while a == 1:  # data entry
         person_x = input("Your Name : ")
-        reason = int(input("press 1 for store data, press 2 for store a multiple file data\n "
+        reason = int(input("press 1 for store a single file data, press 2 for store a multiple file data\n "
                            "For x number of files Press - 3"))
         if reason == 1:
             with open(person_x, "a") as f:
@@ -75,9 +75,8 @@ def visit(a):
 try:
     while True:
         print("Welcome to Data Manager")
-        x = int(input("Enter 1 or 2 = "))
+        x = int(input("Enter 1 for create file or files or Enter 2 for reading a file = "))
         if x == 1:
-            # y = int(input("Enter 1 or 2 = "))
             print("Welcome to the data Entry input you details to get started")
             entry(x)
             break
