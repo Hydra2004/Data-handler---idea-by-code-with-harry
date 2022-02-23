@@ -1,4 +1,4 @@
-# Data Handler ~Hydra2004
+# Project ~Hydra2004
 import datetime
 
 
@@ -9,51 +9,51 @@ def gettime():
 """ !!!! There is code !!!!"""
 
 
-def entry(a):
+def entry(a): # Page Making
     while a == 1:  # data entry
-        person_x = input("Your Name : ")
-        reason = int(input("press 1 for store a single file data, press 2 for store a multiple file data\n "
-                           "For x number of files Press - 3"))
+        person_x = input("File Name: ")
+        reason = int(input("press 1 to make a single page, press 2 to make a multiple pages\n "
+                           "For x number of pages Press - 3"))
         if reason == 1:
             with open(person_x, "a") as f:
-                store_data = input("Write here what you want to put = ")
+                store_data = input("Start writing from here >>> ")
                 f.write(str([str(gettime())]) + "\n" + store_data + "\n")
-                y_n = input("Want to exit - Y/N ")
+                y_n = input("For save and exit(Y) for continue(N) -  ")
                 if y_n == "Y":
-                    print("Your files store in the file format, Please make it in note file manually \n"
+                    print("For reading use inbuild options or may be your pages store in an unknown format, \n Please make it in note file manually for reading \n"
                           "Sorry for your inconvenience")
                     break
                 elif y_n == "N":
                     continue
 
         elif reason == 2:
-            file_quantity = int(input("How many files you want to put"))
+            file_quantity = int(input("Number of pages need :- "))
             for i in range(file_quantity):
-                name_of_files = input("Name of File")
+                name_of_files = input("Title:- ")
                 print(name_of_files)
                 print()
                 with open(name_of_files, "a") as f:
-                    store_data_1 = input("What you want to store")
+                    store_data_1 = input("Start writing from here >>> ")
                     f.write(str([str(gettime())]) + store_data_1 + "\n")
 
-            print("Your files store in the file format, Please make it in note file manually \n"
+            print("For reading use inbuild options or may be your pages store in an unknown format, \n Please make it in note file manually for reading \n"
                   "Sorry for your inconvenience")
             break
 
         elif reason == 3:
-            file_quantity_1 = int(input("Enter the maximum amount of pages"))
+            file_quantity_1 = 100
             for i in range(file_quantity_1):
-                name_of_files = input("Name of File")
+                name_of_files = input("Title:- ")
                 print(name_of_files)
                 print()
                 with open(name_of_files, "a") as f:
-                    store_data_2 = input("What you want to store")
+                    store_data_2 = input("Start writing from here >>> ")
                     f.write(str([str(gettime())]) + store_data_2 + "\n")
-                    pages_amount = input("Press N for next page, for end press any key")
+                    pages_amount = input("Press N for next page, to end press any key")
                     if pages_amount == "N":
                         continue
                     else:
-                        print("Your files store in the file format, Please make it in note file manually \n"
+                        print("For reading use inbuild options or may be your pages store in an unknown format, \n Please make it in note file manually for reading \n"
                               "Sorry for your inconvenience")
                         break
 
@@ -61,39 +61,39 @@ def entry(a):
 
 
 def visit(a):
-    while a == 2:  # data entry
-        print("Here you will able to read the files without changing file into note file")
+    while a == 2:  # Page Reading
+        print("Here you will be able to read you pages without changing them into another format")
         try:
-            file_name = input("Enter a valid file name")
+            file_name = input("Enter you file name => ")
             with open(file_name) as f:
                 print(f.read())
         except:
-            print("your file doesn't existed")
+            print("your file doesn't exis")
         break
 
 
 try:
     while True:
-        print("Welcome to Data Manager")
-        x = int(input("Enter 1 for create file or files or Enter 2 for reading a file = "))
+        print("Page editor")
+        x = int(input("Press 1 for create pages or Press 2 for reading created files = "))
         if x == 1:
-            print("Welcome to the data Entry input you details to get started")
+            print("Welcome To The Page Editor")
             entry(x)
             break
         elif x == 2:
             visit(x)
             break
         else:
-            print("You have chosen the wrong option")
+            print("You enter a  string(a-z) please enter a integer (1 or 2)")
             continue
 
 except:
     while True:
-        print("You input a string please input a integer (1 or 2)\n Warning - 1")
-        x = int(input("Enter 1 for create file or files or Enter 2 for reading a file = "))
+        print("You enter a  string(a-z) please enter a integer (1 or 2)\n Warning - 1")
+        x = int(input("Press 1 to create pages or Press 2 for reading pages = "))
         if x == 1:
             # y = int(input("Enter 1 or 2 = "))
-            print("Welcome to the data Entry input you details to get started")
+            print("Welcome To The Page Editor")
             entry(x)
             break
         elif x == 2:
